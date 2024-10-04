@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to my Virtual Terrarium</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+
+        
+        /* 기본 스타일 */
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        body {
+            font-family: helvetica, arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .jar-walls {
+            height: 60vh;
+            width: 40vw;
+            background: #d1e1df;
+            border-radius: 1rem;
+            position: absolute;
+            bottom: 5%;
+            left: 30%;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .jar-top {
+            width: 35vw;
+            height: 3vh;
+            background: #d1e1df;
+            position: absolute;
+            bottom: 65.5%;
+            left: 32.5%;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .jar-bottom {
+            width: 35vw;
+            height: 1vh;
+            background: #d1e1df;
+            position: absolute;
+            bottom: 5%;
+            left: 32.5%;
+            opacity: 0.7;
+        }
+
+        .dirt {
+            width: 40vw;
+            height: 5vh;
+            background: #3a241d;
+            position: absolute;
+            border-radius: 0 0 1rem 1rem;
+            bottom: 4%;
+            left: 30%;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+
+        #page {
+            display: flex;
+            justify-content: space-between; /* 좌우 컨테이너 사이 공간 */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%; /* 왼쪽과 오른쪽 컨테이너를 각각 50% 너비로 설정 */
+            padding: 10px;
+        }
+
+        .plant-holder {
+            margin: 8px;
+            margin-left: 300px;
+        }
+
+        .plant {
+            max-width: 25%;  /* 이미지의 최대 너비를 컨테이너의 %로 설정 */
+            height: auto;    /* 비율에 맞게 높이 조정 */
+        }
+
+        /* 광택 효과 추가 */
+        .jar-glossy-long {
+            position: absolute;
+            height: 50%;
+            width: 5%;
+            background: rgba(255, 255, 255, 0.3);
+            top: 40%;
+            left: 5%;
+            border-radius: 1rem;
+            z-index: 2;
+        }
+
+        .jar-glossy-short {
+            position: absolute;
+            height: 30%;
+            width: 3%;
+            background: rgba(255, 255, 255, 0.3);
+            top: 50%;
+            left: 13%;
+            border-radius: 1rem;
+            z-index: 2;
+        }
+
+        /* 미디어 쿼리: 작은 화면용 */
+        @media screen and (max-width: 768px) {
+            .jar-walls, .dirt, .jar-top, .jar-bottom {
+                width: 80vw;
+                left: 10%;
+            }
+
+            .jar-walls {
+                height: 40vh;
+            }
+
+            .jar-top {
+                bottom: 45.5%;
+            }
+
+            .jar-bottom {
+                bottom: 4%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>My Terrarium</h1>
+    <div id="page">
+        <!-- 왼쪽 컨테이너 -->
+        <div id="left-container" class="container">
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant1" src="./images/plant1.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant2" src="./images/plant2.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant3" src="./images/plant3.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant4" src="./images/plant4.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant5" src="./images/plant5.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant6" src="./images/plant6.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant7" src="./images/plant7.png" />
+            </div>
+        </div>
+
+        <!-- 오른쪽 컨테이너 -->
+        <div id="right-container" class="container">
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant8" src="./images/plant8.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant9" src="./images/plant9.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant10" src="./images/plant10.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant11" src="./images/plant11.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant12" src="./images/plant12.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant13" src="./images/plant13.png" />
+            </div>
+            <div class="plant-holder">
+                <img class="plant" alt="plant" id="plant14" src="./images/plant14.png" />
+            </div>
+        </div>
+    </div>
+
+    <div id="terrarium">
+        <div class="jar-top"></div>
+        <div class="jar-walls">
+            <div class="jar-glossy-long"></div>
+            <div class="jar-glossy-short"></div>
+        </div>
+        <div class="dirt"></div>
+        <div class="jar-bottom"></div>
+    </div>
+</body>
+</html>
